@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add a gallery</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <h1>Add a photo</h1>
+    {{ photo_formset }}
+    <button type="submit">Add new gallery</button>
+</form>
+{% endblock %}
+

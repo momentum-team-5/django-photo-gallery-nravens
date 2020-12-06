@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+
+<img id='large-image' src="{{photo.photo_large.url }}" alt="{{photo.alt_text}}" />
+
+<p>Uploaded {{photo.created_at}}</p>
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Leave a comment</button>
+</form>
+{% for comment in comments %}
+    <p>{{comment.text}}</p>
+    <p>{{comment.created_at}} by {{comment.author.username}}</p>
+{% endfor %}
+
+{% endblock %}
+
+
+

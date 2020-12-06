@@ -1,0 +1,42 @@
+img {
+    max-width: 100%;
+}
+
+#nav-bar {
+    background-color: #6B9080;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.list-div {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+.photo-div {
+    border-radius: 10px;
+    border-style: solid;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 0px;
+    margin: 10px;
+    min-width: 150px;
+    font-size: 20px;
+}
+
+.plus {
+    font-size: 30px;
+}
+
+#large-photo {
+    margin: 10px;
+}
+
+.link {
+    font-size: 15px;
+    padding:0px;
+    margin:0px;
+}
+
+

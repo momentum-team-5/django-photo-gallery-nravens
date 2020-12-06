@@ -1,0 +1,27 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">           <title>Document</title>
+</head>
+{% if request.user.is_authenticated %}
+<nav id='nav-bar'>
+    <a href="{%url 'gallery_list' user_id=request.user.id %}">My Galleries</a>
+    <a href="/accounts/logout/">logout</a>
+    {% else %}
+    <a href="/accounts/login/">login</a>
+    <a href="/acounts/register/">register</a>
+    {%endif%}
+</nav id='nav-bar'>
+<body>
+{% block content %}
+{% endblock %}
+    
+</body>
+</html>

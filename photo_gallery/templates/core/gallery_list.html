@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class = "list-div">
+    <div class="photo-div" >
+        <p><a class="plus"href="{% url 'gallery_create' %}">&#43;</a>	</p>        
+        <p><a href="{% url 'gallery_create' %}"> Add Gallery</a></p>
+    </div>
+
+    {% for gallery in galleries %}
+    <div class="photo-div">
+        <p><a class = "title" href = "{% url 'gallery_detail' gallery_pk=gallery.pk %}">{{gallery.title}}</a></p>
+        <p><img class = "gallery_photo" src="{{ gallery.get_thumbnail.photo_thumbnail.url }}" alt="{{gallery.get_thumbnail.alt_text}}" /></p>
+        <p class='link'><a  href = "{% url 'gallery_update' gallery_pk=gallery.pk %}">Update the gallery</a></p>
+        <p class='link'><a href = "{% url 'gallery_delete' gallery_pk=gallery.pk %}">Delete the gallery</a></p>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
